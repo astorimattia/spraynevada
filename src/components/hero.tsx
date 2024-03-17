@@ -1,32 +1,39 @@
 import React from 'react';
 
-function Hero() {
+const Hero = () => {
   return (
-    <div className="relative w-full max-w-6xl h-screen mx-auto">
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div className="text-center">
-          <div className="text-black text-opacity-0 text-7xl font-bold leading-[84px] bg-purple-600 bg-clip-text">
-            Spray Smarter
+    <div className="flex items-center justify-center h-screen relative">
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'radial-gradient(rgba(141, 39, 221, 0.49), rgba(25, 20, 32, 0.2) 74%)',
+          zIndex: 0,
+        }}
+      />
+      <div className="text-center z-10">
+        <h1 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#CAA3FA]">
+          Spray Smarter <br />
+          With Drone Application
+        </h1>
+        <div className="text-white font-medium text-2xl opacity-60 mt-8">
+          <p>
+            Take better care of your crops and ncrease efficiency <br />
+            with precise aerial spraying
+          </p>
+          <div className="mt-8 text-sm text-white cursor-pointer opacity-80">
+            <p>Learn More</p>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mx-auto mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
-          <div className="text-black text-opacity-0 text-7xl font-bold leading-[84px] bg-purple-600 bg-clip-text">
-            With Drone Application
-          </div>
-        </div>
-      </div>
-      <div className="absolute w-full max-w-xl h-[464.10px] left-[24.5rem] top-[368px] mx-auto">
-        <div className="absolute flex-col justify-center items-center gap-[15.64px] inline-flex w-[75.68px] left-[13.875rem] top-[416px]">
-          <div className="text-white text-opacity-40 text-sm font-medium leading-none">Learn more</div>
-          <div className="w-4 h-4 relative origin-top-left rotate-90 flex-col justify-start items-start flex"></div>
-        </div>
-        <div className="absolute bg-white bg-opacity-90 rounded-md shadow border border-black border-opacity-5 justify-center items-center inline-flex pl-[13px] pr-[13.29px] pt-[8.50px] pb-[9.50px] left-[11.625rem] top-[350px]">
-          <div className="text-black text-sm font-medium leading-none tracking-tight">Get started today</div>
-        </div>
-        <div className="absolute opacity-60 justify-center items-center inline-flex pb-[14.50px] left-0 top-[277px]">
-          <div className="text-center text-white text-[22px] font-medium leading-7">Take better care of your crops and increase efficiency with precise aerial spraying</div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Hero;

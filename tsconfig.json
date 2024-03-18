@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "postcss.config.js", "tailwind.config.js", "postcss.config.js", "tailwind.config.js"  ]
+, "postcss.config.js", "tailwind.config.js", "postcss.config.js", "tailwind.config.js", "index.tsx"  ]
 }

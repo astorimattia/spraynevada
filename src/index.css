@@ -9,6 +9,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #091A0B;
+  transition: background-color 1s ease;
+}
+
+body.black-background {
+  background-color: black;
+}
+
+body.default-background {
+  background-color: #091A0B;
 }
 
 code {

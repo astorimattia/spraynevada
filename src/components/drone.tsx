@@ -1,25 +1,33 @@
-// components/Drone.jsx
-import React from 'react';
+// components/Drone.tsx
+import React, { useEffect } from 'react';
+import DroneVideo from './DroneVideo.jsx';
+import FeatureCards from './FeatureCards';
+import { handleScroll } from '../utils/scrollUtils'
 
 const Drone = () => {
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="relative h-screen">
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <video
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
-          autoPlay
-          loop
-          muted
-        >
-          <source src="https://github.com/astorimattia/spraynevada/blob/main/public/drone_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="drone-section h-full rounded-2xl pt-72 mt-20 relative">
+      {/* <div className="absolute -top-20 left-0 w-full h-72 bg-gradient-to-b from-[#091A0B] to-black"></div> */}
+      <div className="z-10 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-3xl font-bold text-white">
-            Trusted by many thousand-acre farms in Northern Nevada and
+          <p className="text-xl font-bold text-white">
+            Trusted by many thousand-acre farms in Northern Nevada
           </p>
+          <div className="p-20">
+            <DroneVideo />
+          </div>
+          <div className="m-8">
+            <FeatureCards />
+          </div>
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+<<<<<<< HEAD
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
 <<<<<<< HEAD
@@ -34,6 +35,9 @@
 =======
     "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada"
 >>>>>>> parent of ae56aee (deployment github pages)
+=======
+    "eject": "react-scripts eject"
+>>>>>>> parent of fc8d9db (deployment github pages)
   },
   "eslintConfig": {
     "extends": [

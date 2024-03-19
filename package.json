@@ -2,15 +2,7 @@
   "name": "spraynevada",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "homepage": "https://github.com/astorimattia/spraynevada/public",
-=======
-  "homepage": "https://github.com/astorimattia/spraynevada.git",
->>>>>>> parent of 40bd951 (deployment github pages)
-=======
   "homepage": "https://github.com/astorimattia/spraynevada",
->>>>>>> parent of 2312802 (deployment github pages)
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -31,32 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada/public"
-=======
-    "deploy": "main -d build https://yourusername.github.io/astorimattia/spraynevada"
->>>>>>> parent of e780df1 (deployment github pages)
-=======
-    "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada"
->>>>>>> parent of ae56aee (deployment github pages)
-=======
     "eject": "react-scripts eject"
->>>>>>> parent of fc8d9db (deployment github pages)
-=======
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
->>>>>>> parent of 40bd951 (deployment github pages)
   },
-<<<<<<< HEAD
-=======
-  
->>>>>>> parent of 2312802 (deployment github pages)
+
   "eslintConfig": {
     "extends": [
       "react-app",

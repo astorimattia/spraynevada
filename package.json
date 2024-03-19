@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "homepage": "https://github.com/astorimattia/spraynevada/public",
 =======
   "homepage": "https://github.com/astorimattia/spraynevada.git",
 >>>>>>> parent of 40bd951 (deployment github pages)
+=======
+  "homepage": "https://github.com/astorimattia/spraynevada",
+>>>>>>> parent of 2312802 (deployment github pages)
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -49,6 +53,10 @@
     "deploy": "gh-pages -d build"
 >>>>>>> parent of 40bd951 (deployment github pages)
   },
+<<<<<<< HEAD
+=======
+  
+>>>>>>> parent of 2312802 (deployment github pages)
   "eslintConfig": {
     "extends": [
       "react-app",

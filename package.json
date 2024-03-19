@@ -26,10 +26,14 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada/public"
 =======
     "deploy": "main -d build https://yourusername.github.io/astorimattia/spraynevada"
 >>>>>>> parent of e780df1 (deployment github pages)
+=======
+    "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada"
+>>>>>>> parent of ae56aee (deployment github pages)
   },
   "eslintConfig": {
     "extends": [

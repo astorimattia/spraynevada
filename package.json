@@ -2,7 +2,7 @@
   "name": "spraynevada",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/astorimattia/spraynevada",
+  "homepage": "https://github.com/astorimattia/spraynevada/public",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +11,7 @@
     "@types/node": "^16.18.89",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",
+    "gh-pages": "^6.1.1",
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,9 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada"
+    "deploy": "gh-pages -d build https://yourusername.github.io/astorimattia/spraynevada/public"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.18",
-    "gh-pages": "^6.1.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
   }

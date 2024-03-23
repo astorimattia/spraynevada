@@ -16,7 +16,6 @@ const Drone = () => {
 
   return (
     <div className="drone-section h-full rounded-2xl pt-72 mt-20 relative">
-      {/* <div className="absolute -top-20 left-0 w-full h-72 bg-gradient-to-b from-[#091A0B] to-black"></div> */}
       <div className="z-10 flex items-center justify-center">
         <div className="text-center">
           <p className="text-xl font-bold text-white">

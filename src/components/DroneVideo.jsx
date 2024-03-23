@@ -6,9 +6,33 @@ const DroneVideo = () => {
 
   useEffect(() => {
     const video = videoRef.current;
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (video.paused) {
+            video.play().catch((error) => {
+              console.error('Error playing video:', error);
+            });
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5, // Adjust the threshold as needed
+    });
+
+    observer.observe(video);
+
     video.addEventListener('ended', handleVideoEnded);
 
     return () => {
+      observer.unobserve(video);
       video.removeEventListener('ended', handleVideoEnded);
     };
   }, []);

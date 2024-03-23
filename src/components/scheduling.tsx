@@ -31,7 +31,7 @@ const Scheduling = () => {
           zIndex: 0,
         }}
       />
-      <div className="px-4 sm:px-6 lg:px-8 z-10 relative">
+      <div id="scheduling-section" className="px-4 sm:px-6 lg:px-8 z-10 relative">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Ready for take-off?</h2>
           <p className="mt-4 font-medium text-xl md:text-2xl text-gray-400">

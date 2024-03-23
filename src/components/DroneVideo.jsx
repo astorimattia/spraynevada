@@ -10,9 +10,15 @@ const DroneVideo = () => {
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          video.play();
+          if (video.paused) {
+            video.play().catch((error) => {
+              console.error('Error playing video:', error);
+            });
+          }
         } else {
-          video.pause();
+          if (!video.paused) {
+            video.pause();
+          }
         }
       });
     };
@@ -40,11 +46,11 @@ const DroneVideo = () => {
     <div className="video-content">
       <video
         ref={videoRef}
-        className="w-5/6 h-auto mx-auto mix-blend-difference"
+        className="w-[150%] md:w-5/6 h-auto mx-auto mix-blend-difference"
         muted
-        poster="/drone_poster.jpg"
+        poster="drone_poster.jpg"
       >
-        <source type="video/mp4" src="/drone_video.mp4" />
+        <source type="video/mp4" src="drone_video.mp4" />
       </video>
     </div>
   );

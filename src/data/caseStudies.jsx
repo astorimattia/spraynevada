@@ -1,4 +1,4 @@
-// data/caseStudies.js
+// data/caseStudies.jsx
 export const caseStudies = [
   {
     title: 'Wheat Weed Control',

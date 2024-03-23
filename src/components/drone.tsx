@@ -15,16 +15,16 @@ const Drone = () => {
   }, []);
 
   return (
-    <div className="drone-section h-full rounded-2xl pt-72 mt-20 relative">
+    <div className="drone-section h-full rounded-2xl pt-32 md:pt-48 lg:pt-60 mt-10 md:mt-16 relative flex-grow">
       <div className="z-10 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-xl font-bold text-white">
+        <div className="text-center w-full">
+          <p id="drone-section" className="text-lg md:text-xl font-bold text-white">
             Trusted by many thousand-acre farms in Northern Nevada
           </p>
-          <div className="p-20">
+          <div className="py-8 md:py-12 lg:p-20">
             <DroneVideo />
           </div>
-          <div className="m-8">
+          <div className="m-4 md:m-6 lg:m-8">
             <FeatureCards />
           </div>
         </div>

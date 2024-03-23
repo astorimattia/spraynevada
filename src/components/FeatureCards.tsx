@@ -3,9 +3,9 @@ import React from 'react';
 
 const FeatureCards = () => {
   return (
-    <div className="flex justify-center items-center gap-6 p-8">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-6 p-4">
       <div className="flex flex-col items-center gap-4 p-6 rounded-xl w-64 h-48">
-        <div className="text-white text-6xl font-medium">50%</div>
+        <div className="relative text-white text-6xl font-medium">50%</div>
         <div className="text-center text-white text-opacity-60 text-lg font-medium">Less chemical applied</div>
       </div>
       <div className="flex flex-col items-center gap-4 p-6 rounded-xl w-64 h-48">

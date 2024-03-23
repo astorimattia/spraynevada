@@ -5,9 +5,8 @@ import './index.css';
 import Hero from './components/hero';
 import Drone from './components/drone';
 import CaseStudies from './components/case_studies';
-import DemoCall from './components/demo_call';
-import QuoteForm from './components/quote_form';
 import Scheduling from './components/scheduling';
+import Footer from './components/footer';
 
 
 
@@ -16,10 +15,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <div className="min-h-screen overflow-hidden flex flex-col">
     <Hero />
     <Drone />
     <CaseStudies />
     <Scheduling />
+    <Footer />
+    </div>
   </React.StrictMode>
 );
 

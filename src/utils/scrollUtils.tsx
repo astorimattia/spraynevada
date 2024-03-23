@@ -1,5 +1,4 @@
 export const handleScroll = () => {
-  const scrollPosition = window.scrollY;
   const droneSection = document.querySelector('.drone-section');
   const caseSection = document.querySelector('.case-section');
 

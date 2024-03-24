@@ -5,7 +5,7 @@ export const handleScroll = () => {
   if (droneSection) {
     const droneSectionTop = droneSection.getBoundingClientRect().top;
 
-    if (droneSectionTop <= 100) {
+    if (droneSectionTop <= 400) {
       document.body.classList.add('black-background');
     } else {
       document.body.classList.remove('black-background');

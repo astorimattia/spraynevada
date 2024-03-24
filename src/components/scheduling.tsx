@@ -50,7 +50,7 @@ const Scheduling = () => {
           </div>
           <div
             data-tf-live="01HSMP1PRTX0XA74B2TQKE1P79"
-            className="md:w-[600px] lg:w-[800px] justify-self-center px-4 sm:px-6 lg:px-8 rounded-lg"
+            className="md:w-[600px] lg:w-[850px] justify-self-center px-4 lg:px-8 md:rounded-lg"
           /> 
           <script src="//embed.typeform.com/next/embed.js"></script>
         </div>

@@ -1,17 +1,24 @@
 // components/DroneVideo.jsx
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const DroneVideo = () => {
   const videoRef = useRef(null);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
 
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    const handleScroll = () => {
+      if (!hasPlayed) {
+        const videoTop = video.getBoundingClientRect().top;
+        const videoHeight = video.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        if (videoTop < windowHeight - videoHeight / 2) {
           if (video.paused) {
-            video.play().catch((error) => {
+            video.play().then(() => {
+              setHasPlayed(true);
+            }).catch((error) => {
               console.error('Error playing video:', error);
             });
           }
@@ -20,32 +27,17 @@ const DroneVideo = () => {
             video.pause();
           }
         }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5, // Adjust the threshold as needed
-    });
-
-    observer.observe(video);
-
-    const handleCanPlayThrough = () => {
-      if (video.paused && observer.root && observer.root.contains(video)) {
-        video.play().catch((error) => {
-          console.error('Error playing video:', error);
-        });
       }
     };
 
-    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    window.addEventListener('scroll', handleScroll);
     video.addEventListener('ended', handleVideoEnded);
 
     return () => {
-      observer.unobserve(video);
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      window.removeEventListener('scroll', handleScroll);
       video.removeEventListener('ended', handleVideoEnded);
     };
-  }, []);
+  }, [hasPlayed]);
 
   const handleVideoEnded = () => {
     videoRef.current.classList.add('ended');

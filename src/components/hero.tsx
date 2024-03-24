@@ -19,7 +19,7 @@ const Hero = () => {
         </h1>
         <div className="text-white font-medium text-xl md:text-2xl opacity-60 mt-6 md:mt-8">
           <p>
-            Take better care of your crops and ncrease efficiency <br /> with precise aerial spraying
+            Take better care of your crops and increase efficiency <br /> with precise aerial spraying
           </p>
           <a
             href="#drone-section"

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Particles from "@tsparticles/react";
-import type { Container, SingleOrMultiple } from "@tsparticles/engine";
+import type { SingleOrMultiple } from "@tsparticles/engine";
 import { cn } from "../utils/cn";
 import { motion, useAnimation } from "framer-motion";
 
@@ -16,7 +16,6 @@ type ParticlesProps = {
   particleColor?: string;
   particleDensity?: number;
 };
-
 export const SparklesCore = (props: ParticlesProps) => {
   const {
     id,
@@ -31,16 +30,13 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const controls = useAnimation();
 
-  const particlesLoaded = async (container?: Container) => {
-    if (container) {
-      console.log(container);
-      controls.start({
-        opacity: 1,
-        transition: {
-          duration: 1,
-        },
-      });
-    }
+  const particlesLoaded = async () => {
+    controls.start({
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    });
   };
 
   return (

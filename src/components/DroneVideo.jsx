@@ -49,6 +49,7 @@ const DroneVideo = () => {
         className="w-[150%] md:w-5/6 h-auto mx-auto mix-blend-difference"
         muted
         playsInline
+        preload="auto"
         poster="drone_poster.jpg"
       >
         <source type="video/mp4" src="drone_video.mp4" />

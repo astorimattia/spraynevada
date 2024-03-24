@@ -1,10 +1,11 @@
-// components/sparkles.tsx
+"use client";
 import React from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { SingleOrMultiple } from "@tsparticles/engine";
+import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "../utils/cn";
+import { motion, useAnimation } from "framer-motion";
 
 type ParticlesProps = {
   id?: string;
@@ -29,23 +30,34 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleColor,
     particleDensity,
   } = props;
-  const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
     });
   }, []);
 
+  const controls = useAnimation();
+
+  const particlesLoaded = async (container?: Container) => {
+    if (container) {
+      console.log(container);
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      });
+    }
+  };
+
   return (
-    <div className={cn("h-full w-full", className)}>
-      {init && (
-        <Particles
-          id={id || "tsparticles"}
-          className={cn("h-full w-full")}
-          options={{
+    <motion.div animate={controls} className={cn("opacity-20", className)}>
+      <Particles
+        id={id || "tsparticles"}
+        className={cn("h-full w-full")}
+        particlesLoaded={particlesLoaded}
+        options={{
             background: {
               color: {
                 value: background || "#0d47a1",
@@ -415,7 +427,6 @@ export const SparklesCore = (props: ParticlesProps) => {
             detectRetina: true,
           }}
         />
-      )}
-    </div>
+    </motion.div>
   );
 };

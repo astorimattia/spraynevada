@@ -8,18 +8,18 @@ const DroneVideo = () => {
   useEffect(() => {
     const video = videoRef.current;
 
-    const handleScroll = () => {
-      if (!hasPlayed) {
-        const videoTop = video.getBoundingClientRect().top;
-        const videoHeight = video.offsetHeight;
-        const windowHeight = window.innerHeight;
+    let animationFrameId = null;
 
-        if (videoTop < windowHeight - videoHeight / 2) {
-          if (video.paused) {
-            video.play().then(() => {
-              setHasPlayed(true);
-            }).catch((error) => {
-              console.error('Error playing video:', error);
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!hasPlayed) {
+            animationFrameId = requestAnimationFrame(() => {
+              video.play().then(() => {
+                setHasPlayed(true);
+              }).catch((error) => {
+                console.error('Error playing video:', error);
+              });
             });
           }
         } else {
@@ -27,15 +27,21 @@ const DroneVideo = () => {
             video.pause();
           }
         }
-      }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5, // Adjust the threshold as needed
+    });
+
+    observer.observe(video);
+
     video.addEventListener('ended', handleVideoEnded);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      observer.unobserve(video);
       video.removeEventListener('ended', handleVideoEnded);
+      cancelAnimationFrame(animationFrameId);
     };
   }, [hasPlayed]);
 

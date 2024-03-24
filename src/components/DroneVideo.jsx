@@ -1,4 +1,3 @@
-// components/DroneVideo.jsx
 import React, { useRef, useEffect } from 'react';
 
 const DroneVideo = () => {
@@ -28,8 +27,16 @@ const DroneVideo = () => {
     });
 
     observer.observe(video);
-
     video.addEventListener('ended', handleVideoEnded);
+
+    // Start the video on mobile devices
+    if (/Mobi/.test(navigator.userAgent)) {
+      video.autoplay = true;
+      video.muted = true;
+      video.play().catch((error) => {
+        console.error('Error playing video:', error);
+      });
+    }
 
     return () => {
       observer.unobserve(video);
@@ -49,6 +56,7 @@ const DroneVideo = () => {
         className="w-[150%] md:w-5/6 h-auto mx-auto mix-blend-difference"
         muted
         playsInline
+        poster="drone_poster.jpg"
       >
         <source type="video/mp4" src="drone_video.mp4" />
       </video>

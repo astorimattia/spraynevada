@@ -8,10 +8,16 @@ import Drone from './components/drone';
 import CaseStudies from './components/case_studies';
 import Scheduling from './components/scheduling';
 import Footer from './components/footer';
+import { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+initParticlesEngine(async (engine) => {
+  await loadSlim(engine);
+});
 
 root.render(
   <React.StrictMode>

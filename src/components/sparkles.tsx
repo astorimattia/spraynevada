@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-import Particles from "@tsparticles/react";
-import type { SingleOrMultiple } from "@tsparticles/engine";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import type { Container, SingleOrMultiple } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
 import { cn } from "../utils/cn";
 import { motion, useAnimation } from "framer-motion";
 
@@ -27,36 +29,47 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleColor,
     particleDensity,
   } = props;
-
+  const [init, setInit] = useState(false);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
   const controls = useAnimation();
 
-  const particlesLoaded = async () => {
-    controls.start({
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    });
+  const particlesLoaded = async (container?: Container) => {
+    if (container) {
+      console.log(container);
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      });
+    }
   };
 
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
-      <Particles
-        id={id || "tsparticles"}
-        className={cn("h-full w-full")}
-        particlesLoaded={particlesLoaded}
-        options={{
-          background: {
-            color: {
-              value: background || "#0d47a1",
+      {init && (
+        <Particles
+          id={id || "tsparticles"}
+          className={cn("h-full w-full")}
+          particlesLoaded={particlesLoaded}
+          options={{
+            background: {
+              color: {
+                value: background || "#0d47a1",
+              },
             },
-          },
-          fullScreen: {
-            enable: false,
-            zIndex: 1,
+            fullScreen: {
+              enable: false,
+              zIndex: 1,
             },
 
-            fpsLimit: 40,
+            fpsLimit: 120,
             interactivity: {
               events: {
                 onClick: {
@@ -217,7 +230,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                   mode: "delete",
                   value: 0,
                 },
-                value: particleDensity || 80,
+                value: particleDensity || 120,
               },
               opacity: {
                 value: {
@@ -227,7 +240,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 animation: {
                   count: 0,
                   enable: true,
-                  speed: speed || 3,
+                  speed: speed || 4,
                   decay: 0,
                   delay: 0,
                   sync: false,
@@ -415,6 +428,7 @@ export const SparklesCore = (props: ParticlesProps) => {
             detectRetina: true,
           }}
         />
+      )}
     </motion.div>
   );
 };

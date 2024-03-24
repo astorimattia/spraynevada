@@ -29,10 +29,20 @@ const DroneVideo = () => {
 
     observer.observe(video);
 
+    const handleCanPlayThrough = () => {
+      if (video.paused && observer.root && observer.root.contains(video)) {
+        video.play().catch((error) => {
+          console.error('Error playing video:', error);
+        });
+      }
+    };
+
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
     video.addEventListener('ended', handleVideoEnded);
 
     return () => {
       observer.unobserve(video);
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
       video.removeEventListener('ended', handleVideoEnded);
     };
   }, []);

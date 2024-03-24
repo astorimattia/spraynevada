@@ -27,7 +27,7 @@ const Scheduling = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'radial-gradient(rgba(141, 39, 221, 0.49), rgba(25, 20, 32, 0.0) 68%)',
+          background: 'radial-gradient(rgba(39, 221, 48, 0.2), rgba(20, 32, 23, 0.0) 68%)',
           zIndex: 0,
         }}
       />
@@ -35,7 +35,7 @@ const Scheduling = () => {
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Ready for take-off?</h2>
           <p className="mt-4 font-medium text-xl md:text-2xl text-gray-400">
-            Schedule a free consultation today
+            Schedule a free consultation today!
           </p>
         </div>
         <div className="mt-12 md:mt-16 flex flex-col gap-12 md:gap-16 items-center">

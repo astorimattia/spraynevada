@@ -18,9 +18,9 @@ const CaseStudies = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
             Case Studies
           </h1>
-          <p className="mt-4 font-medium text-xl md:text-2xl text-gray-400">
-            Many use cases, satisfaction guaranteed
-          </p>
+          <div className="text-white font-medium text-xl md:text-2xl opacity-90 mt-6 md:mt-8">
+            <p>Read the case studies about use cases for aerial application. <br /> We do it all, satisfaction guaranteed.</p>
+          </div>
         </div>
         <div className="px-4 md:px-8 lg:px-36 pb-16 md:pb-24 lg:pb-36 pt-12 md:pt-16 lg:pt-24">
           <div className="grid grid-cols-1 gap-12 md:gap-16 lg:gap-20">
@@ -49,7 +49,7 @@ const CaseStudies = () => {
                   >
                     Read the case study
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </a>
                 </div>

@@ -19,23 +19,23 @@ const Hero = () => {
           id="tsparticlesfullpage"
           background="transparent"
           minSize={0.6}
-          maxSize={1.2}
-          particleDensity={80}
+          maxSize={1.4}
+          particleDensity={100}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
       </div>
     <div className="text-center z-10">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#a3faa7]">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
           Spray Smarter <br /> With Drone Application
         </h1>
-        <div className="text-white font-medium text-xl md:text-2xl opacity-60 mt-6 md:mt-8">
+        <div className="text-white font-medium text-xl md:text-2xl opacity-90 mt-6 md:mt-8">
           <p>
             Take better care of your crops and increase efficiency <br /> with precise aerial spraying
           </p>
           <a
             href="#drone-section"
-            className="mt-8 text-sm text-white cursor-pointer opacity-80 inline-block"
+            className="mt-8 text-sm text-white cursor-pointer opacity-90 inline-block"
             onClick={handleLearnMoreClick}
           >
             <p>Learn More</p>
